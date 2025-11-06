@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { confirmarAgendamento } from "../utils/alert";
+import { confirmarAgendamentoDark } from "../utils/alert-dark";
+
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const confirmar = isDarkMode ? confirmarAgendamentoDark : confirmarAgendamento;
+
 
 function Schedule() {
   const [selectedService, setSelectedService] = useState("Aula de Pilates");
@@ -248,29 +254,29 @@ function Schedule() {
           <div className="booking-actions">
             <button
               className="btn-confirm"
-              onClick={() => {
-                let message = `Olá! Gostaria de agendar:\n\n*Serviço:* ${selectedService}\n`;
-                if (
-                  selectedServiceObj &&
-                  selectedServiceObj.hasPackages &&
-                  selectedPackage
-                ) {
-                  message += `*Plano:* ${selectedPackage}\n`;
-                  message += `*Valor:* ${getSelectedPrice()}\n`;
-                } else if (
-                  selectedServiceObj &&
-                  !selectedServiceObj.hasPackages
-                ) {
-                  message += `*Valor:* ${selectedServiceObj.price}\n`;
-                }
-                message += `*Data:* ${selectedDate}\n*Horário:* ${selectedTime}\n\nTenho algumas dúvidas e gostaria de mais informações.`;
-
-                window.open(
-                  `https://wa.me/5519981293361?text=${encodeURIComponent(
-                    message
-                  )}`,
-                  "_blank"
+              onClick={async () => {
+                const confirmado = await confirmar(
+                  selectedService,
+                  selectedPackage,
+                  selectedDate,
+                  selectedTime,
+                  getSelectedPrice()
                 );
+
+                if (confirmado) {
+                  const message = `Olá! Gostaria de agendar:\n\n*Serviço:* ${selectedService}\n${
+                    selectedPackage ? `*Plano:* ${selectedPackage}\n` : ""
+                  }${
+                    getSelectedPrice() ? `*Valor:* ${getSelectedPrice()}\n` : ""
+                  }*Data:* ${selectedDate}\n*Horário:* ${selectedTime}`;
+
+                  window.open(
+                    `https://wa.me/5519981293361?text=${encodeURIComponent(
+                      message
+                    )}`,
+                    "_blank"
+                  );
+                }
               }}
               disabled={
                 !selectedDate ||
