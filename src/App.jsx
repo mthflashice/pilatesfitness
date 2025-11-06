@@ -1,4 +1,4 @@
-import './Styless/styless.css'
+import './Styles/styless.css'
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Schedule from './components/Schedule.jsx';
