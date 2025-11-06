@@ -1,5 +1,5 @@
 import './Styless/styless.css'
-import Header from './components/Header';
+import Header from './components/Header.jsx';
 import Hero from './components/Hero';
 import Schedule from './components/Schedule';
 import Gallery from './components/Gallery';
