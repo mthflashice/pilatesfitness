@@ -1,10 +1,10 @@
 import './Styless/styless.css'
 import Header from './components/Header.jsx';
-import Hero from './components/Hero';
-import Schedule from './components/Schedule';
-import Gallery from './components/Gallery';
-import Video from './components/Video';
-import Contact from './components/Contact';
+import Hero from './components/Hero.jsx';
+import Schedule from './components/Schedule.jsx';
+import Gallery from './components/Gallery.jsx';
+import Video from './components/Video.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
   return (
