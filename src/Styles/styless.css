@@ -1,4 +1,6 @@
-/* Variáveis de cores */
+/* =========================================================
+   VARIÁVEIS DE CORES
+========================================================= */
 :root {
   --primary-green: #2c7a7b; /* Verde principal */
   --dark-green: #1a5351;    /* Verde escuro */
@@ -8,7 +10,9 @@
   --white: #ffffff;         /* Branco */
 }
 
-/* Reset e estilos base */
+/* =========================================================
+   RESET E ESTILOS BASE
+========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +32,9 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* =========================================================
+   HEADER
+========================================================= */
 .header {
   background-color: var(--black);
   color: var(--white);
@@ -69,7 +75,9 @@ body {
   color: var(--primary-green);
 }
 
-/* Hero Section */
+/* =========================================================
+   HERO SECTION
+========================================================= */
 .hero {
   background: linear-gradient(rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.9)), 
               url('/images/hero-bg.jpg') center/cover;
@@ -108,7 +116,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* Video Section */
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
 .video-section {
   padding: 4rem 2rem;
   text-align: center;
@@ -122,7 +132,7 @@ body {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 800px;
@@ -140,7 +150,9 @@ body {
   border-radius: 8px;
 }
 
-/* Schedule Section */
+/* =========================================================
+   SCHEDULE SECTION
+========================================================= */
 .schedule {
   padding: 4rem 2rem;
   text-align: center;
@@ -158,75 +170,173 @@ body {
   margin-bottom: 2rem;
 }
 
-.horarios-grid {
+/* =========================================================
+   PACOTES / PLANOS
+========================================================= */
+.package-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem auto;
-  max-width: 1200px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.dia-card {
+.package-card {
   background: var(--light-bg);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.package-card.selected {
+  border-color: var(--primary-green);
+  background: rgba(44, 122, 123, 0.1);
+}
+
+.package-card h4 {
+  margin-top: 0;
+  color: var(--black);
+  font-size: 1.1rem;
+}
+
+.package-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-green);
+  margin: 0.5rem 0;
+}
+
+.package-details {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin: 0.5rem 0;
+}
+
+.package-savings {
+  display: inline-block;
+  background: #38a169;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.price-variable {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--primary-green);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   RESUMO E AÇÕES DE AGENDAMENTO
+========================================================= */
+.summary-details {
+  background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-top: 4px solid var(--primary-green);
-  transition: transform 0.3s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.dia-card:hover {
-  transform: translateY(-5px);
+.summary-details p {
+  margin: 0.5rem 0;
 }
 
-.dia-card h3 {
-  color: var(--black);
-  margin-top: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--light-green);
-}
-
-.dia-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dia-card li {
+.booking-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
-.dia-card li:last-child {
-  border-bottom: none;
-}
-
-.btn-agendar {
+.btn-confirm {
   background: var(--primary-green);
-  color: var(--white);
+  color: white;
   border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 200px;
 }
 
-.btn-agendar:hover {
+.btn-confirm:hover {
   background: var(--dark-green);
 }
 
-.aviso {
+.btn-confirm:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.btn-calendly {
+  background: transparent;
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 200px;
+}
+
+.btn-calendly:hover {
+  background: var(--primary-green);
+  color: white;
+}
+
+/* =========================================================
+   WHATSAPP DÚVIDAS
+========================================================= */
+.whatsapp-info {
   margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fef5e7;
-  border-left: 4px solid var(--light-green);
-  border-radius: 4px;
+  padding: 1.5rem;
+  background: rgba(37, 211, 102, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.whatsapp-info p {
+  margin-bottom: 1rem;
   color: var(--black);
 }
 
-/* Gallery Section */
+.btn-whatsapp-doubts {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-whatsapp-doubts:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
 .gallery {
   padding: 4rem 2rem;
   text-align: center;
@@ -258,7 +368,33 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Contact Section */
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+@media (max-width: 768px) {
+  .package-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .booking-actions {
+    flex-direction: column;
+  }
+
+  .btn-confirm,
+  .btn-calendly {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .package-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   CONTATO E FOOTER
+========================================================= */
 .contact {
   padding: 4rem 2rem;
   text-align: center;
@@ -298,13 +434,6 @@ body {
   box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
 }
 
-.whatsapp-icon {
-  width: 24px;
-  height: 24px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>') no-repeat center;
-}
-
-/* Footer */
 .footer {
   background-color: var(--black);
   color: var(--white);
