@@ -335,37 +335,165 @@ body {
 }
 
 /* =========================================================
-   GALLERY
+   EQUIPMENT GALLERY (antigo GALLERY)
 ========================================================= */
-.gallery {
+.equipment-gallery {
   padding: 4rem 2rem;
-  text-align: center;
   background-color: var(--light-bg);
+  text-align: center;
 }
 
-.gallery h2 {
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipment-gallery h2 {
   color: var(--black);
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.gallery-grid {
+.gallery-subtitle {
+  color: var(--dark-green);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.gallery-grid img {
+.equipment-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+}
+
+.equipment-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.equipment-image img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.gallery-grid img:hover {
+.equipment-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.equipment-card:hover .equipment-overlay {
+  opacity: 1;
+}
+
+.equipment-overlay h3 {
+  color: var(--white);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.equipment-info {
+  padding: 1.5rem;
+}
+
+.equipment-info h3 {
+  color: var(--primary-green);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.equipment-info p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.equipment-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipment-info li {
+  color: #4a5568;
+  padding: 0.3rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.equipment-info li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+}
+
+/* Adicione após a seção EQUIPMENT GALLERY existente */
+
+/* Efeitos nas imagens */
+.equipment-image img {
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.equipment-card:hover .equipment-image img {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  filter: brightness(1.1);
+}
+
+/* Melhoria no overlay */
+.equipment-overlay {
+  background: linear-gradient(to top, 
+    rgba(44, 122, 123, 0.9) 0%, 
+    rgba(44, 122, 123, 0.6) 50%, 
+    transparent 100%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.equipment-overlay h3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sombra mais pronunciada */
+.equipment-card {
+  transition: all 0.3s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Animação suave para as características */
+.equipment-info li {
+  transition: transform 0.2s ease;
+}
+
+.equipment-card:hover .equipment-info li {
+  transform: translateX(5px);
 }
 
 /* =========================================================
@@ -383,6 +511,14 @@ body {
   .btn-confirm,
   .btn-calendly {
     width: 100%;
+  }
+  
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .equipment-gallery {
+    padding: 3rem 1rem;
   }
 }
 
