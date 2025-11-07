@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { confirmarAgendamento } from "../utils/alert";
-import { confirmarAgendamentoDark } from "../utils/alert-dark";
+import { confirmarAgendamento } from "../../utils/alert";
+import { confirmarAgendamentoDark } from "../../utils/alert-dark";
 
 const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const confirmar = isDarkMode ? confirmarAgendamentoDark : confirmarAgendamento;

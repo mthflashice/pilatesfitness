@@ -1,20 +1,26 @@
-import './Styles/styless.css'
-import Header from './components/Header.jsx';
-import Hero from './components/Hero.jsx';
-import Schedule from './components/Schedule.jsx';
-import EquipmentGallery from './components/EquipmentGallery.jsx';
-import Video from './components/Video.jsx';
-import Contact from './components/Contact.jsx';
+import React from 'react';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Hero from './components/sections/Hero';
+import Video from './components/sections/Video';
+import EquipmentGallery from './components/sections/EquipmentGallery';
+import Schedule from './components/sections/Schedule';
+import Contact from './components/sections/Contact';
+import './styles/global.css';
+import './styles/components.css';
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <Hero />
-      <Video />
-      <Schedule />
-      <EquipmentGallery/>
-      <Contact />
+      <main>
+        <Hero />
+        <Video />
+        <EquipmentGallery />
+        <Schedule />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

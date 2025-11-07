@@ -1,0 +1,33 @@
+/* Variáveis de cores */
+:root {
+  --primary-green: #2c7a7b;
+  --dark-green: #1a5351;
+  --light-green: #4ecdc4;
+  --black: #1a202c;
+  --light-bg: #f7fafc;
+  --white: #ffffff;
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
