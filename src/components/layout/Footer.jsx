@@ -13,9 +13,9 @@ function Footer() {
           <div className="footer-section">
             <h3>Contato</h3>
             <ul>
-              <li>(19) 9999-9999</li>
-              <li>contato@pilatesfitness.com.br</li>
-              <li>Rua Exemplo, 123 - Centro</li>
+              <li>(19) 981293361</li>
+              <li></li>
+              <li>Rua Joaquim de Castro, 159 - JD Monte Verde</li>
             </ul>
           </div>
           
@@ -32,10 +32,19 @@ function Footer() {
           
           <div className="footer-section">
             <h3>Redes Sociais</h3>
-            <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">YouTube</a></li>
+            <ul className="social-links">
+              <li>
+                <a href="https://web.facebook.com/pilatesfitnessbr" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-facebook-f"></i>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/pilatesfitnessbr" target="_blank" rel="noopener noreferrer">
+                  <i className="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
