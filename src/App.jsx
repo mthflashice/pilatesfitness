@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
@@ -11,17 +12,17 @@ import './styles/components.css';
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <main>
+    <Router>
+      <div className="App">
+        <Header />
         <Hero />
         <Video />
         <EquipmentGallery />
         <Schedule />
         <Contact />
-      </main>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

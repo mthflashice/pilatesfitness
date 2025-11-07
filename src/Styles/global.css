@@ -1,14 +1,4 @@
-/* Variáveis de cores */
-:root {
-  --primary-green: #2c7a7b;
-  --dark-green: #1a5351;
-  --light-green: #4ecdc4;
-  --black: #1a202c;
-  --light-bg: #f7fafc;
-  --white: #ffffff;
-}
-
-/* Reset e estilos base */
+/* Reset e estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -16,18 +6,26 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   color: var(--black);
   background-color: var(--white);
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-main {
-  flex: 1;
+/* Variáveis de cores */
+:root {
+  --primary-green: #2ecc71;
+  --dark-green: #27ae60;
+  --light-green: #a9dfbf;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --light-bg: #f8f9fa;
+  --gray: #6c757d;
+  --dark-gray: #343a40;
 }

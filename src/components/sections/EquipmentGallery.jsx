@@ -34,7 +34,6 @@ function EquipmentGallery() {
     }
   ];
 
-  // Componente de imagem com tratamento de erro
   const EquipmentImage = ({ src, alt, name }) => {
     const [imgError, setImgError] = React.useState(false);
     
@@ -44,7 +43,7 @@ function EquipmentGallery() {
         'Reformer': 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=600&fit=crop&crop=center',
         'Chair': 'https://images.unsplash.com/photo-1601924994987-69e26d50dc86?w=800&h=600&fit=crop&crop=center',
         'Barrel': 'https://images.unsplash.com/photo-1584697964198-3c2b6a7a1f3a?w=800&h=600&fit=crop&crop=center',
-        'Bola Suíça': 'https://cdn.pixabay.com/photo/2016/11/18/17/42/gym-1834826_1280.jpg'
+        'Bola Suíça': 'https://cdn.pixabay.com/photo-2016/11/18/17/42/gym-1834826_1280.jpg'
       };
       
       return fallbacks[equipmentName] || 'https://via.placeholder.com/800x600?text=Imagem+do+aparelho';
@@ -65,34 +64,43 @@ function EquipmentGallery() {
   };
 
   return (
-    <section className="equipment-gallery" id="gallery">
-      <div className="gallery-container">
-        <h2>Nossos Equipamentos</h2>
+    <section className="equipment-gallery" id="equipment">
+      <div className="container">
+        <h2>Galeria de Equipamentos</h2>
         <p className="gallery-subtitle">
-          Conheça os aparelhos e acessórios de Pilates que utilizamos em nossas aulas para garantir os melhores resultados
+          Conheça os aparelhos e acessórios de Pilates que utilizamos em nossas aulas
         </p>
         
         <div className="equipment-grid">
           {equipment.map((item, index) => (
-            <div key={index} className="equipment-card">
-              <div className="equipment-image">
-                <EquipmentImage 
-                  src={item.image} 
-                  alt={item.name}
-                  name={item.name}
-                />
-                <div className="equipment-overlay">
-                  <h3>{item.name}</h3>
+            <div 
+              key={index} 
+              className="equipment-card-link"
+              onClick={() => {
+                // Aqui você pode adicionar uma função para abrir um modal ou detalhes do equipamento
+                console.log(`Clicou no equipamento: ${item.name}`);
+              }}
+            >
+              <div className="equipment-card">
+                <div className="equipment-image">
+                  <EquipmentImage 
+                    src={item.image} 
+                    alt={item.name}
+                    name={item.name}
+                  />
+                  <div className="equipment-overlay">
+                    <h3>{item.name}</h3>
+                  </div>
                 </div>
-              </div>
-              <div className="equipment-info">
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <ul>
-                  {item.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
-                </ul>
+                <div className="equipment-info">
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <ul>
+                    {item.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}
