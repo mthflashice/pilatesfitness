@@ -5,7 +5,7 @@ const source = "public/favicon.png"; // sua imagem base
 const outputPath = "public/favicon/";
 
 const configuration = {
-  path: "/favicon/", // caminho base usado no HTML
+  path: "/public/favicon", // caminho base usado no HTML
   appName: "Pilates Fitness",
   appShortName: "Pilates",
   appDescription: "Agende suas aulas de Pilates com facilidade",
