@@ -10,7 +10,7 @@ function Contact() {
     mensagem: ''
   });
 
-  const whatsappNumber = "5519981293361"; // Substitua pelo seu número
+  const whatsappNumber = "5519995994090"; // Substitua pelo seu número
   const calendlyUrl = "https://calendly.com/mthflashice"; // URL do Calendly
 
   const handleChange = (e) => {

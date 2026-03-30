@@ -1,5 +1,5 @@
 const Contact = () => {
-    const whatsappNumber = "5519981293361"; // Seu número com DDD, vou trocar depois
+    const whatsappNumber = "5519995994090"; // Meu número profissional. 
     const message = "Olá! Gostaria de agendar uma aula de Pilates";
   
     return (
